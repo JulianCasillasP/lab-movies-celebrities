@@ -1,0 +1,12 @@
+<h2>Movies List</h2>
+<a href="/movies/create">Create New Movie</a>
+
+{{#if error}}
+  <p>{{ error }}</p>
+{{else}}
+  <ul>
+    {{#each movies}}
+      <li>{{ title }}</li>
+    {{/each}}
+  </ul>
+{{/if}}
