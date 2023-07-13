@@ -6,7 +6,13 @@
 {{else}}
   <ul>
     {{#each movies}}
-      <li>{{ title }}</li>
+      <li>
+        {{ title }}
+        <a href="/movies/{{ _id }}">Details</a>
+        <form action="/movies/{{ _id }}/delete" method="POST" onsubmit="return confirm('Are you sure you want to delete this movie?')">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
     {{/each}}
   </ul>
 {{/if}}

@@ -11,7 +11,6 @@ const movieSchema = new mongoose.Schema({
   },
   plot: {
     type: String,
-    required: true
   },
   cast: [{
     type: mongoose.Schema.Types.ObjectId,

@@ -3,7 +3,7 @@ const router = express.Router();
 const Celebrity = require('../models/Celebrity.model');
 
 // Ruta GET para mostrar todas las celebridades
-router.get('/celebrities', (req, res) => {
+router.get('/', (req, res) => {
   Celebrity.find()
     .then((celebrities) => {
       res.render('celebrities/celebrities', { celebrities });
@@ -14,12 +14,12 @@ router.get('/celebrities', (req, res) => {
 });
 
 // Ruta GET para mostrar el formulario de creación de celebridades
-router.get('/celebrities/create', (req, res) => {
+router.get('/create', (req, res) => {
   res.render('celebrities/new-celebrity');
 });
 
 // Ruta POST para recibir los datos del formulario y crear una nueva celebridad
-router.post('/celebrities/create', (req, res) => {
+router.post('/create', (req, res) => {
   const { name, occupation, catchPhrase } = req.body;
   const newCelebrity = new Celebrity({ name, occupation, catchPhrase });
 
